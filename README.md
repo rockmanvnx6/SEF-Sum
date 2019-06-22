@@ -134,10 +134,10 @@ Between AGILE and Waterfall, another step from waterfall.
 
 Format: 
 
-```pseudocode
+```python
 event[guard]/action
-// For multiple:
-A[B]/C && X[Y]/Z
+// or
+event[guard1 && guard2]/action
 ```
 
 > *Event also known as Trigger.*
