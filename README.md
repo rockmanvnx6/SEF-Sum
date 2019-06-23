@@ -70,6 +70,9 @@ Between AGILE and Waterfall, another step from waterfall.
 
 - Improve **use case** with **user stories**
 
+  - how to write user stories:
+    - As a [...], I want to[....], so I can [...]
+
 - Increment development
 
 - fast and flexible to change
