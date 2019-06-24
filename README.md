@@ -335,3 +335,116 @@ Involves detecting new bugs or defects.
 
 Through changes that attempt to fix existing bugs
 
+### JUnit test
+
+```java
+public class carTest {
+ @Before
+  public void setUp() throws Exception{
+    car = new Car(100,100,10);
+  }
+  @After
+  public void tearDown() throws Exception {
+
+  }
+
+  @Test
+  public void testMove1() {
+    car.move();
+    assertEquals(120, car.getX());
+  }
+  @Test
+  public void testMove2() throws SpeedException {
+    car.move();
+    assertEquals(120, car.getSpeed());
+  }
+  @Test (expected = SpeedException.class)
+  public void testAccelerate() throws SpeedException {
+    car.accelerate();
+    car.accelerate();
+    car.accelerate();
+  } 
+}
+```
+
+#### @BeforeClass
+
+`@BeforeClass` is used when you want to execute it *just once* when the class is first loaded.
+
+Handy for connecting to the database.
+
+```java
+@BeforeClass
+public static void setupClass() throws Exception {
+  // Do stuff
+}
+```
+
+#### @AfterClass
+
+`@AfterClass` will be execute *just once* when the class finished. Suitable for cleaning up the test.
+
+```java
+@AfterClass
+public static void cleanUp() throws Exception {
+  // Do stuff
+}
+```
+
+#### @Before
+
+`@Before` is used ==before the class is test==. Suitable for *Setting up, initialise variables.*
+
+```java
+@Before
+public void setup() throws Exception {
+  int a = 10;
+  Program p = new Program();
+}
+```
+
+#### @After
+
+`@After` is used ==After the class is test==. Suitable for *releasing resources such as files*
+
+```java
+@After
+public void free() throws Exception {
+  a = null;
+  Program p = null;
+}
+```
+
+> You can have @Before and @After as many times as you want.
+
+#### @Test
+
+`@Test` is used <u>to test the class.</u> Use `assertTrue(condition)` or `assertEquals(constant, variable)` to test.
+
+```java
+@Test
+public void testCase1 throws Exception() {
+  a += 10;
+  assertEquals(10,a);
+  assertTrue(a>=10);
+}
+```
+
+##### Specify how long the method is gonna take
+
+```java
+@Test(timeout = 10) 
+public void testCase2 throws Exception() {
+  assertTrue(a*999999 > 200000);
+}
+```
+
+##### Specify what exception class expecting
+
+```java
+@Test(expected = SomeOtherException.class)
+public void testCase3 throws Exception() {
+ 	a/=0;
+}
+```
+
