@@ -1,5 +1,31 @@
 # Summary - Theory
 
+## Project management triangle
+
+1. Time:
+
+   The actual time required for a product to be delivereable
+
+2. Cost:
+
+   The amount of money required to complete the project
+
+3. Scope:
+
+   The functional elements that make up the project deliverables.
+
+> They are dependent on each other
+>
+> *Example*: If time reduces => Scope reduces || cost increases.
+
+## Software development lifecycle
+
+1. Requirement gathering
+2. Analysis
+3. Design architecture
+4. Implementation
+5. Testing
+
 ## WaterFall
 
 - Requirement gathering
@@ -283,5 +309,29 @@ How to determine?
 2. Resolved - *Fixed, waiting to be tested*
 3. Closed - *Tested and approved*
 
+### Rationale testing
 
+- Equivalence class testing:
+  - Divide test cases into different group of test case:
+    - < 18; 18 - 50; > 50
+- Boundary Value testing
+  - Test a specific **boundary value** instead of a group
+  - Boundary value could be the boundaries where the two value meet.
+  - For example:
+    - Testing for under 16, boundary could be
+    - Age = 15, 16
+
+### Validation vs Verification
+
+- Validation: to be valid
+  - Are we building the right product?
+  - Unit testing, integration testing, system testing, acceptance testing.
+- Verification: 
+  - Are we building the product right?
+
+### Regression testing
+
+Involves detecting new bugs or defects.
+
+Through changes that attempt to fix existing bugs
 
